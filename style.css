@@ -1,0 +1,200 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f4f5f7;
+  --card-bg: #ffffff;
+  --text: #1a1d23;
+  --muted: #6b7280;
+  --accent: #1e4d8c;
+  --accent-contrast: #ffffff;
+  --border: #e2e4e9;
+  --error-bg: #fdecec;
+  --error-text: #8a1f1f;
+  --result-bg: #eef5ec;
+  --result-text: #1f5c2c;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14161a;
+    --card-bg: #1e2127;
+    --text: #e7e9ec;
+    --muted: #9aa1ac;
+    --accent: #6ea8f0;
+    --accent-contrast: #0c1220;
+    --border: #2c303a;
+    --error-bg: #3a1f1f;
+    --error-text: #f1a3a3;
+    --result-bg: #1f3324;
+    --result-text: #9fe0ac;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 3rem;
+}
+
+.app-header h1 {
+  font-size: 1.5rem;
+  margin: 0 0 0.25rem;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin: 0 0 1.25rem;
+  font-size: 0.95rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin: 0.75rem 0 0.35rem;
+}
+
+label:first-of-type {
+  margin-top: 0;
+}
+
+select,
+input[type="date"],
+input[type="number"] {
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card-bg);
+  color: var(--text);
+}
+
+select:focus,
+input[type="date"]:focus,
+input[type="number"]:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.radio-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.mode-group {
+  margin-bottom: 0.5rem;
+}
+
+#deadline-type-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-with-suffix {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.input-with-suffix input {
+  flex: 1;
+}
+
+.input-suffix {
+  color: var(--muted);
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.radio-option,
+.checkbox-option {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 400;
+  margin: 0.35rem 0;
+}
+
+.checkbox-option {
+  margin-top: 0.85rem;
+}
+
+.radio-option input,
+.checkbox-option input {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+button {
+  width: 100%;
+  margin-top: 1.1rem;
+  padding: 0.85rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  cursor: pointer;
+}
+
+button:active {
+  opacity: 0.85;
+}
+
+.result {
+  text-align: center;
+  background: var(--result-bg);
+  border-color: var(--result-bg);
+}
+
+.result-date {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--result-text);
+}
+
+.params-note,
+.adjusted-note {
+  margin: 0.6rem 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.error {
+  background: var(--error-bg);
+  color: var(--error-text);
+  border-color: var(--error-bg);
+  font-size: 0.92rem;
+}
+
+.app-footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.78rem;
+  margin-top: 1.5rem;
+}
+
+.app-footer a {
+  color: inherit;
+}
