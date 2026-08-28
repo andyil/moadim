@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>מחשבון מועדים</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+  <header class="app-header">
+    <h1>מחשבון מועדים</h1>
+  </header>
+
+  <section class="card">
+    <div class="radio-group mode-group">
+      <label class="radio-option">
+        <input type="radio" name="calc-mode" value="action" checked>
+        לפי פעולה
+      </label>
+      <label class="radio-option">
+        <input type="radio" name="calc-mode" value="days">
+        לפי ימים
+      </label>
+    </div>
+
+    <div id="deadline-type-group">
+      <label for="deadline-select">סוג פעולה</label>
+      <select id="deadline-select"></select>
+    </div>
+
+    <div id="custom-controls" hidden>
+      <div class="input-with-suffix">
+        <input type="number" id="custom-days" min="1" step="1" inputmode="numeric" placeholder="לדוגמה: 14">
+        <span id="custom-days-suffix" class="input-suffix">ימים</span>
+      </div>
+
+      <div class="radio-group">
+        <label class="radio-option">
+          <input type="radio" name="custom-direction" value="forward" checked>
+          לעתיד
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="custom-direction" value="backward">
+          לעבר
+        </label>
+      </div>
+
+      <label class="checkbox-option">
+        <input type="checkbox" id="custom-count-recess" checked>
+        לספור ימי פגרה
+      </label>
+    </div>
+
+    <label id="start-date-label" for="start-date"></label>
+    <input type="date" id="start-date">
+
+    <button id="compute-btn" type="button">חשב מועד</button>
+  </section>
+
+  <section id="result" class="card result" hidden>
+    <p id="result-date" class="result-date"></p>
+    <p id="result-params" class="params-note" hidden></p>
+    <p id="result-recess" class="adjusted-note" hidden></p>
+    <p id="result-adjusted" class="adjusted-note" hidden></p>
+  </section>
+
+  <section id="error" class="card error" hidden></section>
+
+  <footer class="app-footer">
+    <p>השימוש על אחריותו המלאה של המשתמש</p>
+    <p>האתר לא שומר מידע</p>
+    <p><a id="credit" target="_blank" rel="noopener">לוח עברי מבוסס על hebcal.com</a></p>
+  </footer>
+</main>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
